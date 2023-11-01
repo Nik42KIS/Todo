@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: minmax(60px, 120px) 1fr;
+    grid-template-rows: 60px 1fr;
+}
+
+header{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: rgba(76, 76, 130, 0.596);
+}
+
+main{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgba(130, 80, 80, 0.511);
+}
+
+aside{
+    background-color: rgba(114, 195, 114, 0.567);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
