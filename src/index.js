@@ -1,6 +1,10 @@
+import createTodo from "./functions/createTodo";
 
-import { addTodo } from "./manipulateTodo";
 
-console.log('don\'t look here');
+createTodo(2,22,77777,2222)
+// let a = createTodo(1, 'oooo', 3, 4);
+// console.log(a);
 
-addTodo(1,2,3,4)
+// a.editTitle('wowowowowowowowowwoowowow')
+// console.log(a);
+

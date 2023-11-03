@@ -10,6 +10,19 @@ constructor(title, description, dueDate, priority){
 }
 
 
+editTitle(value){
+    this.title = value;
+}
+editPriority(value){
+    this.priority = value;
+}
+editDescription(value){
+    this.description = value;
+}
+editDate(value){
+    this.dueDate = value;
+}
+
 }
 
 export default Todo
