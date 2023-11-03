@@ -1,3 +1,4 @@
+import render from '../../render';
 import store from '../../store';
 import Todo from '../Todo';
 
@@ -8,9 +9,8 @@ import Todo from '../Todo';
   let todo = new Todo(title, description, dueDate, priority)
   prod.push(todo)
   localStorage.setItem('curProject', JSON.stringify(prod))
-  console.log( JSON.parse(localStorage.getItem('curProject')))
-  
-  
+
+  render()
 }
 
 export default createTodo
