@@ -2,15 +2,24 @@ import render from '../../render';
 import store from '../../store';
 import Todo from '../Todo';
 
- function createTodo(title, description, dueDate, priority) {
-  const prod =  store().curProject;
+function createTodo(title, description, dueDate, priority) {
+  const todo = new Todo(title, description, dueDate, priority);
+  let prevState ;
+  let projectArray = [];
 
+ if(localStorage.getItem('curProject')){
 
-  let todo = new Todo(title, description, dueDate, priority)
-  prod.push(todo)
-  localStorage.setItem('curProject', JSON.stringify(prod))
+   prevState = localStorage.getItem('curProject') ? localStorage.getItem('curProject') : ''
+   projectArray = JSON.parse(prevState)
+ }
+  
 
-  render()
+  projectArray.push(todo);
+
+  localStorage.setItem('curProject', JSON.stringify(projectArray));
+
+ render();
 }
+
 
 export default createTodo
