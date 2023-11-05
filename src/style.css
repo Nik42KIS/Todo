@@ -48,5 +48,5 @@ aside{
 }
 
 #dialog::backdrop{
-    background: #000000;
+    background: rgba(0, 0, 0, 0.696);
 }
