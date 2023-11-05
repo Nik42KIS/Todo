@@ -35,3 +35,18 @@ aside{
  padding: 15px;
  margin:10px;
 }
+
+#dialog{
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    top: 250px;
+    left: 550px;
+    padding: 30px;
+    
+
+}
+
+#dialog::backdrop{
+    background: #000000;
+}
