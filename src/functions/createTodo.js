@@ -1,4 +1,4 @@
-import render from '../../render';
+import render from './render';
 import Todo from '../Todo';
 
 function createTodo(title, description, dueDate, priority) {
