@@ -4,4 +4,4 @@ import createProject from './functions/createProject'
 
 
 manageDom()
-createProject('curProject')
+// createProject('curProject')

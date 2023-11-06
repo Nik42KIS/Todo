@@ -7,7 +7,7 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: minmax(60px, 120px) 1fr;
+    grid-template-columns: minmax(130px, 180px) 1fr;
     grid-template-rows: 60px 1fr;
 }
 
@@ -49,4 +49,12 @@ aside{
 
 #dialog::backdrop{
     background: rgba(0, 0, 0, 0.696);
+}
+
+.projects{
+    margin-left: 10px;
+    /* height: 100%; */
+}
+.project_list{
+    /* height: 100%; */
 }
