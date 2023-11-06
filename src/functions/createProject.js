@@ -12,7 +12,7 @@ function createProject(title) {
  }
   
 
-  projectArray.push(title);
+  // projectArray.push(title);
 
   localStorage.setItem(`${title}`, JSON.stringify(projectArray));
 

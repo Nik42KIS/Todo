@@ -1,12 +1,10 @@
 import createProject from './createProject';
 import createTodo from './createTodo';
-// createTodo(2,22,77777,2222)
 
 function manageDom() {
   const dialog = document.getElementById('dialog');
   const dialogAddTodo = document.querySelector('.dialog_btn_create');
   const btnOpenDialog = document.querySelector('.add_todo');
-  
 
   btnOpenDialog.onclick = () => {
     console.log(`dialog: ${dialog}`);
@@ -21,37 +19,39 @@ function manageDom() {
     createTodo(dTitle, dDesc, dPriority, dDate);
     dialog_form.reset();
   });
-  
+
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
 
-  projectCreator.addEventListener('keypress',(e)=>{
+  projectCreator.addEventListener('keypress', (e) => {
     let key = e.which || e.keyCode;
-    if (key === 13) { // код клавиши Enter
-        const newProject = document.createElement('li');
-             newProject.classList.add('project_list_item');
-             newProject.innerHTML =  `
-                       <input placeholder="type name of project" type="text">
-           `
-             projectList.appendChild(newProject)
-        projectCreator.blur()
+    if (key === 13) {
+      // код клавиши Enter
+      const newProject = document.createElement('li');
+      newProject.classList.add('project_list_item');
+      newProject.innerHTML = `
+                       <input value=${projectCreator.value} placeholder="type name of project" type="text">
+                       <button class='edit_project_btn'>edit</button>
+                       <button class='delete_project_btn'>delete</button>
+           `;
+      projectList.appendChild(newProject);
+      createProject(projectCreator.value);
+      projectCreator.value = '';
+      projectCreator.blur();
+
+      const deleteProjectBtn = document.querySelectorAll('.delete_project_btn');
+      const editProjectBtn = document.querySelector('.edit_project_btn');
+      deleteProjectBtn.forEach((i)=>{
+        i.addEventListener('click', (e) => {
+        console.log(e.target.previousElementSibling.previousElementSibling.value);
+        let cur = e.target.previousElementSibling.previousElementSibling.value;
+        localStorage.removeItem(`${cur}`);
+        console.log('parent:',e.target.parentElement)
+        e.target.parentElement.remove()
+      })
+      });
     }
- } )
-
-  //   const btnCreateProject = document.querySelector('.project_btn_create');
-  
-//   btnCreateProject.addEventListener('click', () =>{
-//     const newProject = document.createElement('li');
-//     newProject.classList.add('project_list_item');
-//     newProject.innerHTML =  `
-//               <input placeholder="type name of project" type="text">
-//   `
-//     projectList.appendChild(newProject)
-//     console.log('hello')
-//   })
-
-
-
+  });
 }
 
 export default manageDom;
