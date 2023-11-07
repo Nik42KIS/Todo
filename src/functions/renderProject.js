@@ -1,3 +1,4 @@
+import checkActiveProject from "./checkActivePr";
 
 
 function renderProject(){
@@ -11,9 +12,32 @@ function renderProject(){
                           <button class='edit_project_btn'>edit</button>
                           <button class='delete_project_btn'>delete</button>
         `
-        projectList.appendChild(newProject)
+        // newProject.addEventListener('click', (e) => {
+        //     checkActiveProject()
+        //     // e.target.classList.add('active_project')
+        //   });
+        projectList.appendChild(newProject);
+        const deleteProjectBtn = document.querySelectorAll('.delete_project_btn');
+        deleteProjectBtn.forEach((i)=>{
+          i.addEventListener('click', (e) => {
+          let cur = e.target.previousElementSibling.previousElementSibling.value;
+          localStorage.removeItem(`${cur}`);
+          let curStateProjects = JSON.parse(localStorage.getItem('projectList'))
+           let resultListProject =  curStateProjects.filter((i)=>{
+               return i!==cur
+            })
+          localStorage.setItem('projectList', JSON.stringify(resultListProject))
+          e.target.parentElement.remove()
+          console.log(curStateProjects);
+          
+        })
+        })
     }
     )}
+
+    checkActiveProject()
+   
+
                 // const newProject = document.createElement('li');
         // newProject.classList.add('project_list_item');
         // newProject.innerHTML = `

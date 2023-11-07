@@ -19,7 +19,7 @@ function render(curProject){
         
         localStorage.getItem('projects')
         
-
+     
     
     
     }
