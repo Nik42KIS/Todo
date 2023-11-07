@@ -58,3 +58,6 @@ aside{
 .project_list{
     /* height: 100%; */
 }
+.project_input{
+    cursor: pointer;
+}

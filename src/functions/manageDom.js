@@ -2,9 +2,13 @@ import createProject from './createProject';
 import createTodo from './createTodo';
 
 function manageDom() {
+
+  //! ABOUT DIALOG
+
   const dialog = document.getElementById('dialog');
   const dialogAddTodo = document.querySelector('.dialog_btn_create');
   const btnOpenDialog = document.querySelector('.add_todo');
+  const dialog_form = document.querySelector('.dialog_content');
 
   btnOpenDialog.onclick = () => {
     console.log(`dialog: ${dialog}`);
@@ -20,6 +24,8 @@ function manageDom() {
     dialog_form.reset();
   });
 
+  //! ABOUT PROJECTS
+
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
 
@@ -30,17 +36,24 @@ function manageDom() {
       const newProject = document.createElement('li');
       newProject.classList.add('project_list_item');
       newProject.innerHTML = `
-                       <input value=${projectCreator.value} placeholder="type name of project" type="text">
+                       <input class='project_input' value=${projectCreator.value} placeholder="type name of project" type="text">
                        <button class='edit_project_btn'>edit</button>
                        <button class='delete_project_btn'>delete</button>
            `;
+
       projectList.appendChild(newProject);
       createProject(projectCreator.value);
       projectCreator.value = '';
       projectCreator.blur();
+      const projectInput = document.querySelector('.project_input');
+      
+      projectInput.addEventListener('click', (e)=>{
+        e.target.blur()
+      })
 
       const deleteProjectBtn = document.querySelectorAll('.delete_project_btn');
       const editProjectBtn = document.querySelector('.edit_project_btn');
+
       deleteProjectBtn.forEach((i)=>{
         i.addEventListener('click', (e) => {
         console.log(e.target.previousElementSibling.previousElementSibling.value);
@@ -49,9 +62,10 @@ function manageDom() {
         console.log('parent:',e.target.parentElement)
         e.target.parentElement.remove()
       })
-      });
+      })
+
     }
-  });
+  })
 }
 
 export default manageDom;

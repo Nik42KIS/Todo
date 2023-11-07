@@ -1,8 +1,11 @@
 // import store from "./store"
 
-function render(){
-    const todos = document.querySelector('.todos');
-    todos.innerHTML = ''
+function render(curProject){
+
+ 
+        const todos = document.querySelector('.todos');
+        todos.innerHTML = '';
+  if(localStorage.getItem('curProject')){
     JSON.parse(localStorage.getItem('curProject')).forEach((i) =>{
         let note = document.createElement('div');
         note.innerHTML = `
@@ -13,9 +16,14 @@ function render(){
         `
         note.classList.add('note')
         todos.appendChild(note)
- 
         
-    })
+        localStorage.getItem('projects')
+        
+
+    
+    
     }
+    )}
+}
 
 export default render

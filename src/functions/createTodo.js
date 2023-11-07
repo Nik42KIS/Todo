@@ -8,7 +8,7 @@ function createTodo(title, description, dueDate, priority) {
 
  if(localStorage.getItem('curProject')){
 
-   prevState = localStorage.getItem('curProject') ? localStorage.getItem('curProject') : ''
+   prevState = localStorage.getItem('curProject')
    projectArray = JSON.parse(prevState)
  }
   

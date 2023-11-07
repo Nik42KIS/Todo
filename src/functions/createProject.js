@@ -3,18 +3,19 @@ import Todo from '../Todo';
 
 function createProject(title) {
   let prevState ;
-  let projectArray = [];
+  let projectList = [];
 
- if(localStorage.getItem(`${title}`)){
+ if(localStorage.getItem('projectList')){
 
-   prevState = localStorage.getItem(`${title}`) ? localStorage.getItem(`${title}`) : ''
-   projectArray = JSON.parse(prevState)
+   prevState =  localStorage.getItem('projectList');
+   projectList = JSON.parse(prevState)
  }
   
 
-  // projectArray.push(title);
+  projectList.push(title);
 
-  localStorage.setItem(`${title}`, JSON.stringify(projectArray));
+  localStorage.setItem(`${title}`, JSON.stringify([]));
+  localStorage.setItem('projectList', JSON.stringify(projectList));
 
 //  render();
 }
