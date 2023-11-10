@@ -61,3 +61,7 @@ aside{
 .project_input{
     cursor: pointer;
 }
+
+.active_project{
+    background-color: rgb(169, 65, 65);
+}
