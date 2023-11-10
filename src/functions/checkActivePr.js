@@ -4,13 +4,10 @@ function checkActiveProject(char){
     projectListActive.forEach((item)=>{
   
             item == char 
-            ? char.classList.add('active_project') 
-            : char.classList.remove('active_project')
-        //     item == char 
-        //     ? console.log('add active')
-        //     : console.log('delete active');
+            ? item.classList.add('active_project')
+            : item.classList.remove('active_project')
+            item == char 
             
-
     })
     // projectListActive.addEventListener('click', (e)=>{
     //     projectListActive.forEach((item)=>{
