@@ -5,6 +5,8 @@ function createProject(title) {
   let prevState ;
   let projectList = [];
 
+  
+
  if(localStorage.getItem('projectList')){
 
    prevState =  localStorage.getItem('projectList');

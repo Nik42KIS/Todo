@@ -6,16 +6,18 @@ function createTodo(title, description, dueDate, priority) {
   let prevState ;
   let projectArray = [];
 
- if(localStorage.getItem('curProject')){
+  const activeProject = document.getElementsByClassName('active_project')[0].firstElementChild.textContent;
+  console.log('active', activeProject)
+ if(localStorage.getItem(activeProject)){
 
-   prevState = localStorage.getItem('curProject')
+   prevState = localStorage.getItem(activeProject)
    projectArray = JSON.parse(prevState)
  }
   
 
   projectArray.push(todo);
 
-  localStorage.setItem('curProject', JSON.stringify(projectArray));
+  localStorage.setItem(activeProject, JSON.stringify(projectArray));
 
  render();
 }
