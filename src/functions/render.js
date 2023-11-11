@@ -1,12 +1,13 @@
 // import store from "./store"
 
-function render(curProject){
+function render(projectName){
 
  
         const todos = document.querySelector('.todos');
         todos.innerHTML = '';
-  if(localStorage.getItem('curProject')){
-    JSON.parse(localStorage.getItem('curProject')).forEach((i) =>{
+        console.log()
+  if(localStorage.getItem(projectName)){
+    JSON.parse(localStorage.getItem(projectName)).forEach((i) =>{
         let note = document.createElement('div');
         note.innerHTML = `
         <div class="note_title">title: ${i.title}</div>
@@ -17,7 +18,6 @@ function render(curProject){
         note.classList.add('note')
         todos.appendChild(note)
         
-        localStorage.getItem('projects')
         
      
     

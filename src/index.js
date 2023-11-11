@@ -5,7 +5,8 @@ import render from './functions/render'
 import renderProject from './functions/renderProject'
 
 
+
 manageDom()
-render()
 renderProject()
+render()
 // createProject('curProject')

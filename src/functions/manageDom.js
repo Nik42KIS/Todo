@@ -25,7 +25,6 @@ function manageDom() {
   });
 
   //! ABOUT PROJECTS
-
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
 
@@ -34,8 +33,8 @@ function manageDom() {
     if (key === 13) {
       // код клавиши Enter
       createProject(projectCreator.value);
-      projectCreator.value = ''
-      renderProject()
+      projectCreator.value = '';
+      renderProject();
     }
   });
 }

@@ -1,21 +1,23 @@
 import checkActiveProject from './checkActivePr';
+import render from './render';
 
 function renderProject() {
   const projectList = document.querySelector('.project_list');
+
   projectList.innerHTML = '';
   if (localStorage.getItem('projectList')) {
     JSON.parse(localStorage.getItem('projectList')).forEach((item) => {
       const newProject = document.createElement('li');
       newProject.classList.add('project_list_item');
       newProject.addEventListener('click', (e) => {
-        e.target.blur();
-        checkActiveProject(e.target);
+       let curProject =  checkActiveProject(e.target);
+       render(curProject)
       });
       newProject.innerHTML = `
       <span class='project_name'>${item}</span>
       <button class='delete_project_btn'>delete</button>
       `;
-      
+
       //<button class='edit_project_btn'>edit</button>
       // <input class='project_input' value=${item} placeholder="type name of project" type="text">
 
