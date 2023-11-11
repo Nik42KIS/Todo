@@ -36,6 +36,7 @@ function manageDom() {
       projectCreator.value = '';
       renderProject();
     }
+    
   });
 }
 
