@@ -1,6 +1,6 @@
 // import store from "./store"
 
-function render(projectName){
+function renderTodo(projectName){
 
  
         const todos = document.querySelector('.todos');
@@ -14,6 +14,8 @@ function render(projectName){
         <div class="note_priority">priority: ${i.priority}</div>
         <div class="note_description"> desc: ${i.description}</div>
         <div class="note_date">date: ${i.dueDate}</div>
+        <button class='delete_todo_btn'>Delete</button>
+        <button class='complete_todo_btn'>Complete</button>
         `
         note.classList.add('note')
         todos.appendChild(note)
@@ -26,4 +28,4 @@ function render(projectName){
     )}
 }
 
-export default render
+export default renderTodo

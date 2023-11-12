@@ -1,5 +1,7 @@
 
 
+
+
 class Todo{
     
 constructor(title, description, dueDate, priority){
@@ -20,7 +22,7 @@ editDescription(value){
     this.description = value;
 }
 editDate(value){
-    this.dueDate = value;
+    this.dueDate = dueDate
 }
 
 }

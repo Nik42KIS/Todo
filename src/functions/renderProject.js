@@ -1,5 +1,6 @@
 import checkActiveProject from './checkActivePr';
-import render from './render';
+import renderTodo from './renderTodo';
+
 
 function renderProject() {
   const projectList = document.querySelector('.project_list');
@@ -19,7 +20,7 @@ function renderProject() {
       newProject.addEventListener('click', (e) => {
    
        let curProject =  checkActiveProject(e.target);
-       render(curProject)}
+       renderTodo(curProject)}
       );
       newProject.innerHTML = `
        <span class='project_name'>${item}</span>

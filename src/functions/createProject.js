@@ -1,5 +1,4 @@
-import render from './render';
-import Todo from '../Todo';
+
 
 function createProject(title) {
   let prevState;

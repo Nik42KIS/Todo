@@ -1,5 +1,6 @@
-import render from './render';
+
 import Todo from '../Todo';
+import renderTodo from './renderTodo';
 
 function createTodo(title, description, dueDate, priority) {
   const todo = new Todo(title, description, dueDate, priority);
@@ -18,7 +19,7 @@ function createTodo(title, description, dueDate, priority) {
 
   localStorage.setItem(activeProject, JSON.stringify(projectArray));
 
-  render(activeProject);
+  renderTodo(activeProject);
 }
 
 export default createTodo;

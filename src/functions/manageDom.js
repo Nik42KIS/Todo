@@ -1,4 +1,4 @@
-import checkActiveProject from './checkActivePr';
+import { format, compareAsc } from 'date-fns'
 import createProject from './createProject';
 import createTodo from './createTodo';
 import renderProject from './renderProject';
@@ -19,8 +19,8 @@ function manageDom() {
     const dTitle = document.querySelector('.dialog_title').value;
     const dDesc = document.querySelector('.dialog_description').value;
     const dPriority = document.querySelector('.dialog_priority').value;
-    const dDate = document.querySelector('.dialog_date').value;
-    createTodo(dTitle, dDesc, dPriority, dDate);
+    const dDate = format(new Date(), 'dd/MM/yyyy')
+    createTodo(dTitle, dDesc, dDate, dPriority);
     dialog_form.reset();
   });
 
