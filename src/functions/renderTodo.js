@@ -12,8 +12,7 @@ function renderTodo(projectName) {
         <div class="note_priority">priority: ${i.priority}</div>
         <div class="note_description"> desc: ${i.description}</div>
         <div class="note_date">date: ${i.dueDate}</div>
-        <button class='delete_todo_btn'>Delete</button>
-        <button class='complete_todo_btn'>Complete</button>
+        <button class='delete_todo_btn'>Delete</button
         `;
       note.id = i.id;
       note.classList.add('note');
@@ -23,7 +22,7 @@ function renderTodo(projectName) {
 
       deleteTodoBtn.forEach((item) => {
         item.addEventListener('click', (event) => {
-            
+
           const oldStore = JSON.parse(localStorage.getItem(projectName));
 
           const newStore = oldStore.filter((elem) => {
@@ -34,6 +33,22 @@ function renderTodo(projectName) {
           renderTodo(projectName);
         });
       });
+      const confirmTodoBtn = document.querySelectorAll('.complete_todo_btn')
+
+    //   confirmTodoBtn.forEach((item) => {
+    //     item.addEventListener('click', (event) => {
+
+    //       const oldStore = JSON.parse(localStorage.getItem(projectName));
+
+    //       const newStore = oldStore.filter((elem) => {
+    //         return elem.id != event.target.parentElement.id;
+    //       });
+
+    //       localStorage.setItem(projectName, JSON.stringify(newStore));
+    //       renderTodo(projectName);
+    //     });
+    //   });
+
     });
   }
 }

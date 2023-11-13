@@ -29,9 +29,16 @@
     </div>
     <dialog id="dialog">
       <form method="dialog" class="dialog_content" action="">
-        <input type="text" class="dialog_title" placeholder="Title">
-        <input type="text" class="dialog_description" placeholder="Description">
-        <input type="text" class="dialog_priority" placeholder="Priority">
+        <label for="dialog_title">Title:</label>
+        <input id="dialog_title" type="text" class="dialog_title" placeholder="Title">
+        <label for="dialog_description">Description:</label>
+        <input id="dialog_description type="text" class="dialog_description" placeholder="Description">
+        <label for="dialog_priority">Priority:</label>
+        <select class="dialog_priority" name="priority" id="dialog_priority">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
         <input type="text" class="dialog_date" placeholder="Date">
         <button  class="dialog_btn_create">Create</button>
       </form>
