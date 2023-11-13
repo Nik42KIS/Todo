@@ -28,6 +28,10 @@ function manageDom() {
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
 
+  if(projectList.length){
+    projectList.firstChild.className.add('active_project')
+  }
+
   projectCreator.addEventListener('keypress', (e) => {
     let key = e.which || e.keyCode;
     if (key === 13) {
