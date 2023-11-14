@@ -1,4 +1,5 @@
 // import store from "./store"
+import createTodo from './createTodo'
 
 function renderTodo(projectName) {
   const todos = document.querySelector('.todos');
@@ -18,38 +19,70 @@ function renderTodo(projectName) {
       note.classList.add('note');
       todos.appendChild(note);
 
-      const deleteTodoBtn = document.querySelectorAll('.delete_todo_btn');
+      /////////////////////////
 
-      deleteTodoBtn.forEach((item) => {
-        item.addEventListener('click', (event) => {
+      const dialog = document.getElementById('dialog_edit_todo');
+      const dialogTitle = document.getElementById('dialog_title_edit');
+      const dialogDescription = document.getElementById('dialog_description_edit');
+      const dialogPriority = document.getElementById('dialog_priority_edit');
+      const dialogDate = document.getElementById('dialog_date_edit');
+      const saveTodoBtn = document.querySelector('.dialog_btn_save');
 
-          const oldStore = JSON.parse(localStorage.getItem(projectName));
+    //   note.addEventListener('click', (event) => {
+    //     dialog.showModal();
 
-          const newStore = oldStore.filter((elem) => {
-            return elem.id != event.target.parentElement.id;
-          });
-
-          localStorage.setItem(projectName, JSON.stringify(newStore));
-          renderTodo(projectName);
-        });
-      });
-      const confirmTodoBtn = document.querySelectorAll('.complete_todo_btn')
-
-    //   confirmTodoBtn.forEach((item) => {
-    //     item.addEventListener('click', (event) => {
-
-    //       const oldStore = JSON.parse(localStorage.getItem(projectName));
-
-    //       const newStore = oldStore.filter((elem) => {
-    //         return elem.id != event.target.parentElement.id;
-    //       });
-
-    //       localStorage.setItem(projectName, JSON.stringify(newStore));
-    //       renderTodo(projectName);
+    //     const oldS = JSON.parse(localStorage.getItem(projectName));
+    //     console.log('old', oldS);
+        
+    //     const newS = oldS.filter((elem) => {
+         
+    //       return elem.id == event.target.parentElement.id || elem.id == event.target.id;
     //     });
+
+       
+    //     const updatedArr = oldS.filter((elem) => {
+    //       return elem.id != event.target.parentElement.id || elem.id == event.target.id;
+    //     });
+    //     console.log(updatedArr)
+       
+    //     const dTitle = newS[0].title;
+    //     const dDesc = newS[0].description;
+    //     const dPriority = newS[0].priority;
+    //     const dDate = newS[0].dueDate;
+        
+    //     dialogTitle.value = dTitle;
+    //     dialogDescription.value = dDesc;
+    //     dialogPriority.value = dPriority;
+    //     dialogDate.value = dDate;
+
+       
+    //     let todo = createTodo(dialogTitle.value,dialogDescription.value,dialogPriority.value,dialogDate.value)
+    //     updatedArr.push(todo)
+    //     localStorage.setItem(projectName, JSON.stringify(updatedArr))
+ 
+    //   });
+
+    //   saveTodoBtn.addEventListener('click', (event) => {
+    //     renderTodo(projectName)
     //   });
 
     });
+
+    const deleteTodoBtn = document.querySelectorAll('.delete_todo_btn');
+
+    deleteTodoBtn.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        const oldStore = JSON.parse(localStorage.getItem(projectName));
+
+        const newStore = oldStore.filter((elem) => {
+          return elem.id != event.target.parentElement.id;
+        });
+
+        localStorage.setItem(projectName, JSON.stringify(newStore));
+        renderTodo(projectName);
+      });
+    });
+
   }
 }
 

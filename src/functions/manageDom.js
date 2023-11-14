@@ -24,13 +24,15 @@ function manageDom() {
     dialog_form.reset();
   });
 
+  
+
   //! ABOUT PROJECTS
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
 
-  if(projectList.length){
-    projectList.firstChild.className.add('active_project')
-  }
+  // if(projectList.length){
+  //   projectList.firstChild.className.add('active_project')
+  // }
 
   projectCreator.addEventListener('keypress', (e) => {
     let key = e.which || e.keyCode;

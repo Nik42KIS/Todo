@@ -26,43 +26,7 @@ function renderProject() {
        <span class='project_name'>${item}</span>
       <button class='delete_project_btn'>delete</button>
       `
-      // list.addEventListener("click", function(event) {
-      //   // Проверяем, является ли целевой элемент span или button
-      //   var targetElement = event.target;
-      
-      //   // Проверяем, содержится ли целевой элемент внутри элемента li
-      //   while (targetElement && targetElement !== list) {
-      //     if (targetElement.tagName === "LI") {
-      //       // Удаляем класс 'active' у всех элементов li в списке
-      //       list.querySelectorAll("li").forEach(function(li) {
-      //         li.classList.remove("active");
-      //       });
-      
-      //       // Добавляем класс 'active' только текущему элементу li
-      //       targetElement.classList.add("active");
-      //       break;
-      //     }
-      
-      //     // Переходим к родительскому элементу для проверки следующего уровня
-      //     targetElement = targetElement.parentNode;
-      //   }
-      // });
-      // Этот код добавляет обработчик события клика к родительскому элементу ul (вместо каждого li). При клике на любой элемент внутри ul, код проверяет, является ли целевой элемент li или находится ли целевой элемент внутри li. Если это так, то он добавляет/удаляет класс active соответствующим образом.
-      
-      
-      
-      
-      
-      
-      // newProject.prepend(projectName)
-      
-      // projectName.addEventListener('click', (e) => {
-      //   e.stopPropagation()
-      //   let curProject =  checkActiveProject(e.target);
-      //   render(curProject)
-      // }
-      // )
-      ;
+   
     
 
       //<button class='edit_project_btn'>edit</button>
