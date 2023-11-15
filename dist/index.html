@@ -26,26 +26,33 @@
 
     <dialog id="dialog">
       <form method="dialog" class="dialog_content" id="dialog_form" action="">
-        <label for="dialog_title">Title:</label>
-        <input id="dialog_title" type="text" class="dialog_title" placeholder="Title" />
-        <label for="dialog_description">Description:</label>
-        <textarea
-          id="dialog_description"
-          type="text"
-          class="dialog_description"
-          placeholder="Description"></textarea>
-        <label for="dialog_priority">Priority:</label>
-        <select class="dialog_priority" name="priority" id="dialog_priority">
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-        <input type="text" class="dialog_date" placeholder="Date" />
+        <div class="first_row">
+          <label for="dialog_title">Title:</label>
+          <input id="dialog_title" type="text" class="dialog_title" placeholder="Title" />
+        </div>
+        <div class="second_row">
+          <label for="dialog_description">Description:</label>
+          <input
+            id="dialog_description"
+            type="text"
+            class="dialog_description"
+            placeholder="Description"></input>
+        </div>
+        <div class="third_row">
+          <label for="dialog_priority">Priority:</label>
+          <select class="dialog_priority" name="priority" id="dialog_priority">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <!-- <input type="text" class="dialog_date" placeholder="Date" /> -->
         <button form="dialog_form" class="dialog_btn_create">Create</button>
       </form>
     </dialog>
 
-    <dialog id="dialog_edit_todo">
+    <!-- <dialog id="dialog_edit_todo">
       <form id="edit_todo_form" method="dialog" class="dialog_content" action="">
         <label for="dialog_title_edit">Title:</label>
         <input id="dialog_title_edit" type="text" class="dialog_title" placeholder="Title" />
@@ -64,6 +71,6 @@
         <input type="text" class="dialog_date" id="dialog_date_edit" placeholder="Date" />
         <button form="edit_todo_form" class="dialog_btn_save">Save</button>
       </form>
-    </dialog>
+    </dialog> -->
   </body>
 </html>
