@@ -1,76 +1,119 @@
-*{
-    --color-dark-blue: #09092d;
-    --color-white: #f2f1ed;
-    --color-light-blue: #393781;
-    --color-pink: #f4bba4;
-    margin: 0;
-    padding: 0;
-    color: var(--color-white);
+* {
+  --color-dark-blue: #09092d;
+  --color-white: #f2f1ed;
+  --color-light-blue: #393781;
+  --color-pink: #f4bba4;
+  margin: 0;
+  padding: 0;
+  /* color: var(--color-white); */
 }
 
-.container{
-    height: 100vh;
-    width: 100vw;
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: minmax(130px, 220px) 1fr;
+  grid-template-rows: 60px 1fr;
+}
+
+header {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  background-color: var(--color-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--color-white);
+}
+
+main {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: rgba(130, 80, 80, 0.511);
+}
+
+aside {
+  color: var(--color-dark-blue);
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  font-size: 1.3rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-right: 1px solid var(--color-dark-blue);
+}
+.project-creator {
+  border: none;
+  border: 2px solid var(--color-dark-blue);
+  font-size: 1.4rem;
+  border-radius: 16px;
+  height: 30px;
+  width: 180px;
+  margin: 10px 0;
+  padding-left: 5px;
+}
+.project-creator:focus {
+  background-color: var(--color-white);
+  outline: none;
+
+}
+
+.projects {
+  margin-left: 5px;
+  grid-column: 2/3;
+  /* height: 100%; */
+}
+.project_list {
     display: grid;
-    grid-template-columns: minmax(130px, 220px) 1fr;
-    grid-template-rows: 60px 1fr;
+    gap: 8px;
+    
 }
-
-header{
-    grid-column: 1/3;
-    grid-row: 1/2;
-    background-color: var(--color-dark-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+.project_list_item {
+  display: grid;
+  padding: 3px;
+  grid-template-columns: 1fr 60px;
+  transition: background-color all 0.1s;
 }
-
-main{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    background-color: rgba(130, 80, 80, 0.511);
-}
-
-aside{
-    background-color: rgba(114, 195, 114, 0.567);
-    grid-column: 1/2;
-    grid-row: 2/3;
-}
-.note{
- border: 5px dashed black;
- font-size: 1.5rem;
- border-radius: 10px;
- padding: 15px;
- margin:10px;
-}
-
-#dialog{
-    position: absolute;
-    height: 200px;
-    width: 400px;
-    top: 250px;
-    left: 550px;
-    padding: 30px;
-
-
-}
-
-#dialog::backdrop{
-    background: rgba(0, 0, 0, 0.696);
-}
-
-.projects{
-    margin-left: 10px;
-    /* height: 100%; */
-}
-.project_list{
-    /* height: 100%; */
-}
-.project_input{
+.project_list_item:hover{
     cursor: pointer;
+    background-color:rgba(0, 0, 255, 0.052);
+}
+.project_input {
+  cursor: pointer;
 }
 
-.active_project{
-    background-color: rgb(169, 65, 65);
+.active_project {
+    background-color: rgba(0, 0, 255, 0.052);
+  border-bottom: 3px solid var(--color-dark-blue );
+  border-top: 3px solid var(--color-dark-blue );
+  font-weight: bold;
+}
+.delete_project_btn{
+    border: none;
+    border-radius: 10px;
+    border-bottom: 3px solid var(--color-dark-blue);
+height: 25px;
+font-size: 1.1rem;
+background-color: var(--color-pink);
+background-color:var(--color-white) ;
+}
+.note {
+  border: 5px dashed black;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+}
+
+#dialog {
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  top: 250px;
+  left: 550px;
+  padding: 30px;
+}
+
+#dialog::backdrop {
+  background: rgba(0, 0, 0, 0.696);
 }
