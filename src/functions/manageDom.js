@@ -1,4 +1,4 @@
-import { format, compareAsc } from 'date-fns'
+import { format } from 'date-fns';
 import createProject from './createProject';
 import createTodo from './createTodo';
 import renderProject from './renderProject';
@@ -6,7 +6,6 @@ import renderTodo from './renderTodo';
 
 function manageDom() {
   //! ABOUT DIALOG
-
 
   const dialog = document.getElementById('dialog');
   const dialogAddTodo = document.querySelector('.dialog_btn_create');
@@ -21,29 +20,24 @@ function manageDom() {
     const dTitle = document.querySelector('.dialog_title').value;
     const dDesc = document.querySelector('.dialog_description').value;
     const dPriority = document.querySelector('.dialog_priority').value;
-    const dDate = format(new Date(), 'dd/MM/yyyy')
+    const dDate = format(new Date(), 'dd/MM/yyyy');
     createTodo(dTitle, dDesc, dDate, dPriority);
     dialog_form.reset();
   });
 
-  
-
   //! ABOUT PROJECTS
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
-  if(!localStorage.getItem('projectList')){
-    createProject('Coming up!')
-    createProject('Plans')
-    renderProject()
+  if (!localStorage.getItem('projectList')) {
+    createProject('Coming up!');
+    createProject('Plans');
+    renderProject();
   }
-  
-  projectList.firstChild.classList.add('active_project')
+
+  projectList.firstChild.classList.add('active_project');
   const activeProject =
     document.getElementsByClassName('active_project')[0].firstElementChild.textContent;
-  renderTodo(activeProject)
-  // if(projectList.length){
-  //   projectList.firstChild.className.add('active_project')
-  // }
+  renderTodo(activeProject);
 
   projectCreator.addEventListener('keypress', (e) => {
     let key = e.which || e.keyCode;
@@ -53,7 +47,6 @@ function manageDom() {
       projectCreator.value = '';
       renderProject();
     }
-    
   });
 }
 

@@ -1,4 +1,3 @@
-
 import Todo from '../Todo';
 import renderTodo from './renderTodo';
 
@@ -14,7 +13,7 @@ function createTodo(title, description, dueDate, priority) {
     prevState = localStorage.getItem(activeProject);
     projectArray = JSON.parse(prevState);
   }
-  todo.id = Date.now()
+  todo.id = Date.now();
   projectArray.push(todo);
 
   localStorage.setItem(activeProject, JSON.stringify(projectArray));

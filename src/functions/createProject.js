@@ -1,5 +1,3 @@
-
-
 function createProject(title) {
   let prevState;
   let projectList = [];
