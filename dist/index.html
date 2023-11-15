@@ -3,64 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO</title>
+    <title>Todo app</title>
     <script src="bundle.js" defer></script>
     <link rel="stylesheet" href="./../src/style.css" />
   </head>
   <body>
     <div class="container">
-      <header>header</header>
+      <header>Create Todo for yourself!</header>
       <aside>
         <nav class="projects">
-          <input placeholder="Add project" class="project-creator" type="text">
+          <input placeholder="Add project" class="project-creator" type="text" />
           <ul class="project_list">
-            <li class="project_list_item">
-              <!-- <button class="project_btn_create">Create Project</button> -->
-            </li>
+            <li class="project_list_item"></li>
           </ul>
         </nav>
       </aside>
-      <main> 
-        <section class="todos">
-         
-        </section>
+      <main>
+        <section class="todos"></section>
         <button class="add_todo">+ Add</button>
       </main>
     </div>
-    
+
     <dialog id="dialog">
       <form method="dialog" class="dialog_content" id="dialog_form" action="">
         <label for="dialog_title">Title:</label>
-        <input  id="dialog_title" type="text" class="dialog_title" placeholder="Title" >
+        <input id="dialog_title" type="text" class="dialog_title" placeholder="Title" />
         <label for="dialog_description">Description:</label>
-        <textarea id="dialog_description" type="text" class="dialog_description" placeholder="Description"></textarea>
+        <textarea
+          id="dialog_description"
+          type="text"
+          class="dialog_description"
+          placeholder="Description"></textarea>
         <label for="dialog_priority">Priority:</label>
         <select class="dialog_priority" name="priority" id="dialog_priority">
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
-        <input type="text" class="dialog_date" placeholder="Date">
+        <input type="text" class="dialog_date" placeholder="Date" />
         <button form="dialog_form" class="dialog_btn_create">Create</button>
       </form>
     </dialog>
-    
+
     <dialog id="dialog_edit_todo">
-      <form id="edit_todo_form" method="dialog" class="dialog_content"  action="">
+      <form id="edit_todo_form" method="dialog" class="dialog_content" action="">
         <label for="dialog_title_edit">Title:</label>
-        <input  id="dialog_title_edit" type="text" class="dialog_title" placeholder="Title" >
+        <input id="dialog_title_edit" type="text" class="dialog_title" placeholder="Title" />
         <label for="dialog_description_edit">Description:</label>
-        <textarea id="dialog_description_edit" type="text" class="dialog_description" placeholder="Description"></textarea>
+        <textarea
+          id="dialog_description_edit"
+          type="text"
+          class="dialog_description"
+          placeholder="Description"></textarea>
         <label for="dialog_priority_edit">Priority:</label>
         <select class="dialog_priority" name="priority" id="dialog_priority_edit">
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
-        <input type="text" class="dialog_date" id="dialog_date_edit" placeholder="Date">
+        <input type="text" class="dialog_date" id="dialog_date_edit" placeholder="Date" />
         <button form="edit_todo_form" class="dialog_btn_save">Save</button>
       </form>
     </dialog>
-    
   </body>
 </html>
