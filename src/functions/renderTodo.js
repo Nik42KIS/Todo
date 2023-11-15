@@ -13,7 +13,7 @@ function renderTodo(projectName) {
         <div class="note_priority">priority: ${i.priority}</div>
         <div class="note_description"> desc: ${i.description}</div>
         <div class="note_date">date: ${i.dueDate}</div>
-        <button class='delete_todo_btn'>Delete</button
+        <button class='delete_todo_btn'>Delete</button>
         `;
       note.id = i.id;
       note.classList.add('note');
@@ -21,30 +21,31 @@ function renderTodo(projectName) {
 
       /////////////////////////
 
-      const dialog = document.getElementById('dialog_edit_todo');
-      const dialogTitle = document.getElementById('dialog_title_edit');
-      const dialogDescription = document.getElementById('dialog_description_edit');
-      const dialogPriority = document.getElementById('dialog_priority_edit');
-      const dialogDate = document.getElementById('dialog_date_edit');
-      const saveTodoBtn = document.querySelector('.dialog_btn_save');
+    //   const dialog = document.getElementById('dialog_edit_todo');
+    //   const dialogTitle = document.getElementById('dialog_title_edit');
+    //   const dialogDescription = document.getElementById('dialog_description_edit');
+    //   const dialogPriority = document.getElementById('dialog_priority_edit');
+    //   const dialogDate = document.getElementById('dialog_date_edit');
+    //   const saveTodoBtn = document.querySelector('.dialog_btn_save');
 
-    //   note.addEventListener('click', (event) => {
+    //   const editTodoBtn = document.querySelector('.edit_todo_btn');
+
+    //   editTodoBtn.addEventListener('click', (event) => {
     //     dialog.showModal();
 
     //     const oldS = JSON.parse(localStorage.getItem(projectName));
-    //     console.log('old', oldS);
+
         
     //     const newS = oldS.filter((elem) => {
          
-    //       return elem.id == event.target.parentElement.id || elem.id == event.target.id;
+    //       return elem.id == event.target.parentElement.id 
     //     });
 
        
     //     const updatedArr = oldS.filter((elem) => {
-    //       return elem.id != event.target.parentElement.id || elem.id == event.target.id;
+    //       return elem.id != event.target.parentElement.id 
     //     });
-    //     console.log(updatedArr)
-       
+    //    console.log('upd:', updatedArr)
     //     const dTitle = newS[0].title;
     //     const dDesc = newS[0].description;
     //     const dPriority = newS[0].priority;

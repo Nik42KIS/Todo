@@ -6,6 +6,7 @@ import renderProject from './renderProject';
 function manageDom() {
   //! ABOUT DIALOG
 
+
   const dialog = document.getElementById('dialog');
   const dialogAddTodo = document.querySelector('.dialog_btn_create');
   const btnOpenDialog = document.querySelector('.add_todo');
@@ -29,7 +30,12 @@ function manageDom() {
   //! ABOUT PROJECTS
   const projectList = document.querySelector('.project_list');
   const projectCreator = document.querySelector('.project-creator');
-
+  if(!localStorage.getItem('projectList')){
+    createProject('Coming up!')
+    createProject('Plans')
+    renderProject()
+  }
+  projectList.firstChild.classList.add('active_project')
   // if(projectList.length){
   //   projectList.firstChild.className.add('active_project')
   // }

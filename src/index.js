@@ -5,7 +5,7 @@ import renderTodo from './functions/renderTodo'
 
 
 
-manageDom()
 renderProject()
 renderTodo()
+manageDom()
 // createProject('curProject')
