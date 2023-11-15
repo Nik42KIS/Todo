@@ -9,10 +9,14 @@ function renderTodo(projectName) {
     JSON.parse(localStorage.getItem(projectName)).forEach((i) => {
       let note = document.createElement('div');
       note.innerHTML = `
-        <div class="note_title">title: ${i.title}</div>
-        <div class="note_priority">priority: ${i.priority}</div>
-        <div class="note_description"> desc: ${i.description}</div>
-        <div class="note_date">date: ${i.dueDate}</div>
+        <div>
+            <div class="note_title">Title: ${i.title}</div>
+            <div class="note_priority">Priority: ${i.priority}</div>
+        </div>
+        <div>
+            <div class="note_description"> Description: ${i.description}</div>
+            <div class="note_date">${i.dueDate}</div>
+        </div>
         <button class='delete_todo_btn'>Delete</button>
         `;
       note.id = i.id;

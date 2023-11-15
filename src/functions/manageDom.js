@@ -2,6 +2,7 @@ import { format, compareAsc } from 'date-fns'
 import createProject from './createProject';
 import createTodo from './createTodo';
 import renderProject from './renderProject';
+import renderTodo from './renderTodo';
 
 function manageDom() {
   //! ABOUT DIALOG
@@ -35,7 +36,11 @@ function manageDom() {
     createProject('Plans')
     renderProject()
   }
+  
   projectList.firstChild.classList.add('active_project')
+  const activeProject =
+    document.getElementsByClassName('active_project')[0].firstElementChild.textContent;
+  renderTodo(activeProject)
   // if(projectList.length){
   //   projectList.firstChild.className.add('active_project')
   // }
