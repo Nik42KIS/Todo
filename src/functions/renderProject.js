@@ -5,36 +5,38 @@ function renderProject() {
   const projectList = document.querySelector('.project_list');
 
   projectList.innerHTML = '';
-  if (localStorage.getItem('projectList')) {
-    JSON.parse(localStorage.getItem('projectList')).forEach((item) => {
-      const newProject = document.createElement('li');
-      newProject.classList.add('project_list_item');
+  
+  const storedProjects = JSON.parse(localStorage.getItem('projectList')) || [];
 
-      newProject.addEventListener('click', (e) => {
-        let curProject = checkActiveProject(e.target);
-        renderTodo(curProject);
-      });
-      newProject.innerHTML = `
-       <span class='project_name'>${item}</span>
-      <button class='delete_project_btn'>delete</button>
-      `;
+  storedProjects.forEach((item) => {
+    const newProject = document.createElement('li');
+    newProject.classList.add('project_list_item');
 
-      projectList.appendChild(newProject);
-      const deleteProjectBtn = document.querySelectorAll('.delete_project_btn');
-      deleteProjectBtn.forEach((i) => {
-        i.addEventListener('click', (e) => {
-          let cur = e.target.parentElement.firstElementChild.textContent;
-          localStorage.removeItem(`${cur}`);
-          let curStateProjects = JSON.parse(localStorage.getItem('projectList'));
-          let resultListProject = curStateProjects.filter((i) => {
-            return i !== cur;
-          });
-          localStorage.setItem('projectList', JSON.stringify(resultListProject));
-          e.target.parentElement.remove();
-          console.log(curStateProjects);
-        });
-      });
+    newProject.addEventListener('click', (e) => {
+      const curProject = checkActiveProject(e.target);
+      renderTodo(curProject);
     });
-  }
+
+    const projectContent = document.createElement('div');
+    projectContent.classList.add('project_content');
+    projectContent.textContent = item;
+
+    const deleteProjectBtn = document.createElement('button');
+    deleteProjectBtn.classList.add('delete_project_btn');
+    deleteProjectBtn.textContent = 'delete';
+
+    deleteProjectBtn.addEventListener('click', (e) => {
+      const cur = e.target.parentElement.firstElementChild.textContent;
+      localStorage.removeItem(cur);
+      const curStateProjects = storedProjects.filter((i) => i !== cur);
+      localStorage.setItem('projectList', JSON.stringify(curStateProjects));
+      e.target.parentElement.remove();
+    });
+
+    newProject.appendChild(projectContent);
+    newProject.appendChild(deleteProjectBtn);
+    projectList.appendChild(newProject);
+  });
 }
+
 export default renderProject;
